@@ -1,17 +1,15 @@
-name: "Hello World"
+name: CI
 
 on:
   push:
-    branches:
-      - 'master'
-  pull_requests:
-    branches:
-      - 'master'
+    branches: ["master"]
 
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Hello Step
-      run: echo "Hello World"
+    steps:
+      - uses: actions/checkout@v3
+  
+      - name: Run a one-line script
+        run: echo Hello, world!
